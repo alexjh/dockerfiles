@@ -1,7 +1,8 @@
-FROM debian:latest
+FROM debian:jessie
 
 RUN apt-get update \
   && apt-get -y upgrade \
+  && apt-get -y install wget ca-certificates \
   && apt-get -y autoclean \
   && apt-get -y autoremove \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
